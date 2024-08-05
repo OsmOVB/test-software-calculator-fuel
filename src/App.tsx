@@ -12,7 +12,7 @@ const App: React.FC = () => {
   const [formDataList, setFormDataList] = useState<FormData[]>([]);
   const [selectedData, setSelectedData] = useState<FormData[]>([]);
   const [isFormDisabled, setIsFormDisabled] = useState<boolean>(false);
-  const [initialFuelType, setInitialFuelType] = useState<'gasoline' | 'alcohol'>('gasoline');
+  const [initialFuelType, setInitialFuelType] = useState<'gasolina' | 'álcool'>('gasolina');
   const [initialDistance, setInitialDistance] = useState<number>(0);
 
   // Carrega os dados iniciais do mockDatabase
@@ -33,12 +33,12 @@ const App: React.FC = () => {
       return updatedList;
     });
 
-    if (data.fuelType === 'alcohol') {
+    if (data.fuelType === 'álcool') {
       setSelectedData(prevList => [...prevList, data]);
       setIsFormDisabled(true);
     } else {
       setSelectedData([data]);
-      setInitialFuelType('alcohol');
+      setInitialFuelType('álcool');
       setInitialDistance(data.distance);
     }
   };
@@ -51,7 +51,7 @@ const App: React.FC = () => {
     setFormDataList([]);
     setIsFormDisabled(false);
     saveDataToMockDatabase([]); // Limpa os dados armazenados no mockDatabase
-    setInitialFuelType('gasoline');
+    setInitialFuelType('gasolina');
     setInitialDistance(0);
   };
 

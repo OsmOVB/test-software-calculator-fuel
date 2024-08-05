@@ -2,13 +2,13 @@
  * Tipos de dados do formulário.
  * distance: number;
   consumption: number;
-  fuelType: 'gasoline' | 'alcohol';
+  fuelType: 'gasolina' | 'álcool';
   fuelPrice: number;
  */
 export interface FormData {
   distance: number;
   consumption: number;
-  fuelType: 'gasoline' | 'alcohol';
+  fuelType: 'gasolina' | 'álcool';
   fuelPrice: number;
 }
 

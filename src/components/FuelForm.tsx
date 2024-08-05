@@ -7,7 +7,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 interface FuelFormInputs {
   distance: number;
   consumption: number;
-  fuelType: 'gasoline' | 'alcohol';
+  fuelType: 'gasolina' | 'álcool';
   fuelPrice: number;
 }
 
@@ -16,7 +16,7 @@ interface FuelFormInputs {
  */
 interface FuelFormProps {
   onAdd: (data: FuelFormInputs) => void;
-  initialFuelType?: 'gasoline' | 'alcohol';
+  initialFuelType?: 'gasolina' | 'álcool';
   initialDistance?: number;
   disabled?: boolean;
 }
@@ -29,8 +29,8 @@ interface FuelFormProps {
  * @param {FuelFormProps} props Propriedades do componente.
  * @returns JSX.Element
  */
-const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasoline', initialDistance = 0, disabled = false }) => {
-  const [fuelType, setFuelType] = useState<'gasoline' | 'alcohol'>(initialFuelType);
+const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasolina', initialDistance = 0, disabled = false }) => {
+  const [fuelType, setFuelType] = useState<'gasolina' | 'álcool'>(initialFuelType);
   const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm<FuelFormInputs>({
     defaultValues: {
       distance: initialDistance,
@@ -50,18 +50,18 @@ const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasoline'
 
   const submitHandler: SubmitHandler<FuelFormInputs> = data => {
     onAdd(data);
-    if (data.fuelType === 'gasoline') {
-      setFuelType('alcohol');
+    if (data.fuelType === 'gasolina') {
+      setFuelType('álcool');
       reset({
         distance: data.distance,
-        fuelType: 'alcohol',
+        fuelType: 'álcool',
         consumption: 0,
         fuelPrice: 0
       });
     } else {
       reset({
         distance: initialDistance,
-        fuelType: 'gasoline',
+        fuelType: 'gasolina',
         consumption: 0,
         fuelPrice: 0
       });
@@ -80,7 +80,7 @@ const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasoline'
             })}
           type="number"
           step="any"
-          disabled={fuelType === 'alcohol' && !disabled} // Permite a entrada de distância para novo cálculo
+          disabled={fuelType === 'álcool' && !disabled} // Permite a entrada de distância para novo cálculo
         />
         {errors.distance && <span>{errors.distance.message}</span>}
       </div>
@@ -101,8 +101,8 @@ const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasoline'
       <div>
         <label>Tipo de Combustível:</label>
         <select {...register('fuelType')} disabled>
-          <option value="gasoline">Gasolina</option>
-          <option value="alcohol">Álcool</option>
+          <option value="gasolina">Gasolina</option>
+          <option value="álcool">Álcool</option>
         </select>
       </div>
       <div>
