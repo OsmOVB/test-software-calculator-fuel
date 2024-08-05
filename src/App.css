@@ -8,7 +8,7 @@ body {
 
 h1, h2 {
   color: #ffffff;
-  font-size: 1.5em; /* Reduzido de 2em */
+  font-size: 1.5em; 
 }
 
 form {
@@ -17,24 +17,24 @@ form {
   align-items: flex-start;
   margin-bottom: 10px;
   background-color: #1e1e1e;
-  padding: 10px; /* Reduzido de 20px */
+  padding: 10px; 
   border-radius: 10px;
 }
 
 label {
-  margin-top: 5px; /* Reduzido de 10px */
-  font-size: 0.9em; /* Reduzido de 1em */
+  margin-top: 5px; 
+  font-size: 0.9em; 
 }
 
 input, select, button {
   margin-top: 5px;
-  padding: 8px; /* Reduzido de 10px */
+  padding: 8px; 
   border: none;
   border-radius: 5px;
   background-color: #333333;
   color: #ffffff;
   width: 100%;
-  font-size: 0.9em; /* Reduzido de 1em */
+  font-size: 0.9em; 
 }
 
 input[type="number"] {
@@ -69,18 +69,18 @@ ul {
 
 li {
   background-color: #1e1e1e;
-  margin: 5px 0; /* Reduzido de 10px */
-  padding: 8px; /* Reduzido de 10px */
+  margin: 5px 0; 
+  padding: 8px; 
   border-radius: 5px;
-  font-size: 0.9em; /* Reduzido de 1em */
+  font-size: 0.9em; 
 }
 
 .card {
-  padding: 15px; /* Reduzido de 20px */
+  padding: 15px; 
   border-radius: 5px;
-  width: 120px; /* Reduzido de 250px */
+  width: 120px; 
   text-align: center;
-  font-size: 0.9em; /* Reduzido de 1.2em */
+  font-size: 0.9em; 
 }
 
 .card.best {
@@ -93,22 +93,22 @@ li {
 
 .card h3 {
   margin-top: 0;
-  font-size: 1em; /* Reduzido de 1.2em */
+  font-size: 1em; 
 }
 
 .card p {
-  font-size: 1em; /* Reduzido de 1.2em */
+  font-size: 1em; 
 }
 
 .results {
   display: flex;
-  gap: 10px; /* Reduzido de 20px */
-  margin-top: 10px; /* Reduzido de 20px */
+  gap: 10px; 
+  margin-top: 10px; 
 }
 
 button.reset {
   background-color: #6200ea;
-  margin-top: 10px; /* Reduzido de 20px */
+  margin-top: 10px; 
 }
 
 button.reset:hover {
