@@ -83,7 +83,7 @@ const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasoline'
       <div>
         <label>Consumo (km/l):</label>
         <input
-          {...register('consumption', { required: "Insira um consumo válido.", min: { value: 0.1, message: "O consumo deve ser maior que 0." } })}
+          {...register('consumption', { required: "Insira um consumo válido.", min: { value: 0.1, message: "O consumo deve ser maior que 0.1" } })}
           type="number"
           step="any"
           disabled={disabled}
