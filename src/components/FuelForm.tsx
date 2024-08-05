@@ -73,7 +73,11 @@ const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasoline'
       <div>
         <label>Distância (km):</label>
         <input
-          {...register('distance', { required: "Insira uma distância válida.", min: { value: 0.1, message: "A distância deve ser maior que 0." } })}
+          {...register('distance', 
+            { required: "Insira uma distância válida.", 
+              min: { value: 0.1, message: "A distância deve ser maior que 0.1" },
+              max: { value: 999999, message: "A distância deve ser menor que 99999 km" }
+            })}
           type="number"
           step="any"
           disabled={fuelType === 'alcohol' && !disabled} // Permite a entrada de distância para novo cálculo
@@ -83,7 +87,11 @@ const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasoline'
       <div>
         <label>Consumo (km/l):</label>
         <input
-          {...register('consumption', { required: "Insira um consumo válido.", min: { value: 0.1, message: "O consumo deve ser maior que 0.1" } })}
+          {...register('consumption', { 
+            required: "Insira um consumo válido.",
+             min: { value: 0.1, message: "O consumo deve ser maior que 0.1" }, 
+            max: { value: 999.9, message: "O consumo deve ser menor que 999.9 km/l" }
+            })}
           type="number"
           step="any"
           disabled={disabled}
@@ -100,7 +108,11 @@ const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasoline'
       <div>
         <label>Preço do Combustível (R$/litro):</label>
         <input
-          {...register('fuelPrice', { required: "Insira um preço válido.", min: { value: 0.01, message: "O preço deve ser maior que 0." } })}
+          {...register('fuelPrice', { 
+            required: "Insira um preço válido.", 
+            min: { value: 0.01, message: "O preço deve ser maior que 0.01" }, 
+            max: { value: 999.99, message: "O preço deve ser menor que 999.99 R$/litro" }
+          })}
           type="number"
           step="any"
           disabled={disabled}
