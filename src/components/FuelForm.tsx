@@ -71,8 +71,9 @@ const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasolina'
   return (
     <form onSubmit={handleSubmit(submitHandler)}>
       <div>
-        <label>Distância (km):</label>
+        <label htmlFor="distance">Distância (km):</label>
         <input
+          id="distance"
           {...register('distance', 
             { required: "Insira uma distância válida.", 
               min: { value: 0.1, message: "A distância deve ser maior que 0.1" },
@@ -85,8 +86,9 @@ const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasolina'
         {errors.distance && <span>{errors.distance.message}</span>}
       </div>
       <div>
-        <label>Consumo (km/l):</label>
+        <label htmlFor="consumption">Consumo (km/l):</label>
         <input
+          id="consumption"
           {...register('consumption', { 
             required: "Insira um consumo válido.",
              min: { value: 0.1, message: "O consumo deve ser maior que 0.1" }, 
@@ -99,15 +101,16 @@ const FuelForm: React.FC<FuelFormProps> = ({ onAdd, initialFuelType = 'gasolina'
         {errors.consumption && <span>{errors.consumption.message}</span>}
       </div>
       <div>
-        <label>Tipo de Combustível:</label>
-        <select {...register('fuelType')} disabled>
+        <label htmlFor="fuelType">Tipo de Combustível:</label>
+        <select id="fuelType" {...register('fuelType')} disabled>
           <option value="gasolina">Gasolina</option>
           <option value="álcool">Álcool</option>
         </select>
       </div>
       <div>
-        <label>Preço do Combustível (R$/litro):</label>
+        <label htmlFor="fuelPrice">Preço do Combustível (R$/litro):</label>
         <input
+          id="fuelPrice"
           {...register('fuelPrice', { 
             required: "Insira um preço válido.", 
             min: { value: 0.01, message: "O preço deve ser maior que 0.01" }, 

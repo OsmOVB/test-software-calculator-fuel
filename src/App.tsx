@@ -78,12 +78,11 @@ const App: React.FC = () => {
     const [gasolineData, alcoholData] = selectedData;
     const gasolineCost = parseFloat(calculateTotalCost(gasolineData));
     const alcoholCost = parseFloat(calculateTotalCost(alcoholData));
-    const threshold = gasolineData.fuelPrice * 0.7;
 
-    const bestFuel = alcoholData.fuelPrice < threshold ? 'Álcool' : 'Gasolina';
-    const bestCost = alcoholData.fuelPrice < threshold ? alcoholCost : gasolineCost;
-    const worstFuel = bestFuel === 'Álcool' ? 'Gasolina' : 'Álcool';
-    const worstCost = bestFuel === 'Álcool' ? gasolineCost : alcoholCost;
+    const bestFuel = gasolineCost < alcoholCost ? 'Gasolina' : 'Álcool';
+    const bestCost = Math.min(gasolineCost, alcoholCost);
+    const worstFuel = bestFuel === 'Gasolina' ? 'Álcool' : 'Gasolina';
+    const worstCost = Math.max(gasolineCost, alcoholCost);
 
     return (
       <div className="results">

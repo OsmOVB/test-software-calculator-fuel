@@ -3,43 +3,36 @@ body {
   color: #ffffff;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 10px;
+  padding: 0;
 }
 
 h1, h2 {
   color: #ffffff;
-  font-size: 1.5em; 
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 10px;
-  background-color: #1e1e1e;
-  padding: 10px; 
-  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 label {
-  margin-top: 5px; 
-  font-size: 0.9em; 
+  margin-top: 10px;
 }
 
 input, select, button {
   margin-top: 5px;
-  padding: 8px; 
+  padding: 10px;
   border: none;
   border-radius: 5px;
   background-color: #333333;
   color: #ffffff;
-  width: 100%;
-  font-size: 0.9em; 
 }
 
 input[type="number"] {
-  -moz-appearance: textfield;
-  appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 input::placeholder, option {
@@ -54,7 +47,6 @@ input:focus, select:focus, button:focus {
 button {
   background-color: #6200ea;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -64,57 +56,45 @@ button:hover {
 ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 li {
   background-color: #1e1e1e;
-  margin: 5px 0; 
-  padding: 8px; 
+  margin: 10px 0;
+  padding: 10px;
   border-radius: 5px;
-  font-size: 0.9em; 
 }
 
-.card {
-  padding: 15px; 
-  border-radius: 5px;
-  width: 120px; 
-  text-align: center;
-  font-size: 0.9em; 
-}
-
-.card.best {
-  background-color: #4caf50;
-}
-
-.card.worst {
-  background-color: #f44336;
-}
-
-.card h3 {
-  margin-top: 0;
-  font-size: 1em; 
-}
-
-.card p {
-  font-size: 1em; 
-}
-
-.results {
-  display: flex;
-  gap: 10px; 
-  margin-top: 10px; 
-}
-
-button.reset {
+button {
   background-color: #6200ea;
-  margin-top: 10px; 
+  margin-left: 10px;
 }
 
-button.reset:hover {
+button:hover {
   background-color: #3700b3;
 }
 
 span {
   color: #ff5252;
+}
+
+.results {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 5px;
+  width: 250px;
+  height: 150px;
+}
+
+.best {
+  background-color: #4caf50;
+}
+
+.worst {
+  background-color: #f44336;
 }
